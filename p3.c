@@ -1,14 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
-
-
-struct stu{
-	int rollNo;
-	char name[20];
-	float marks;
-};
+#include"header.h"
 
 
 void print_powerof2(struct stu **p , int n){
@@ -17,10 +10,13 @@ void print_powerof2(struct stu **p , int n){
 	int len = 0;
 	int pow = 1;
 	
-	printf("-------------------------------------------------------------------------------------------------------------------\n");
 	for(i = 0 ; i < n ; i++){
 		len = strlen(p[i] -> name);
 		pow = 1;
+		if(len == 2){
+			printf("The student's marks whose name's length is power of 2 = %.2f\n",p[i] -> marks);
+		}
+		else {
 			for(j = 1 ; j <= len ; j++){
 				pow = pow * 2;
 			
@@ -29,7 +25,7 @@ void print_powerof2(struct stu **p , int n){
 					break;
 				}
 			}
-		
+		}
 	}
 
 	printf("-------------------------------------------------------------------------------------------------------------------\n");
